@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: scrapio
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: TMDB_API_KEY
+        value: 439c478a771f35c05022f9feabcca01c
+      - key: PORT
+        value: 10000
